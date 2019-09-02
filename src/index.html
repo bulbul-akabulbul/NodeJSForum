@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Hi</title>
+    <style>
+      td {
+        border: 1px solid black;
+      }
+      .name {
+        font-size: 20px;
+      }
+    </style>
+	</head>
+	<body>
+    <div class="messages">
+    <table id="messages">
+    {% for message in messages %}
+      <tr>
+        <td class="name"><strong>{{ unescape(message.Name) }}<strong></td>
+        <td class="message">{{ unescape(message.Message) }}</td>
+      </tr>
+    {% endfor %}
+    </table>
+    </div>
+		<!--<p id="test"></p>-->
+		<p>Hello {{ name }}</p>
+    <form action="/post" method="get">
+      <input type="text" hidden value="{{ name }}" name="name"></input>
+      <input type="text" value="" placeholder="Enter your text..." name="message"></input>
+      <input type="submit"></input>
+    </form>
+		<script type="text/javascript" src='https://code.jquery.com/jquery-3.4.1.min.js'>
+		</script>
+    <!--<script type="text/javascript">
+    console.log("Hello World!");
+      $.get("/messages", function(data) {
+        $.each(data, (i, message) => {
+          console.log(message);
+          $('#messages tbody:last-child').append('<tr><td class="name"><strong>' + message["Name"] + '<strong></td><td class="message">' + message["Message"] + '</td></tr>')
+      })})
+    </script>-->
+		<!--<script>
+			$.get('https://random-word-api.herokuapp.com/word?key=XG5IGCJP&number=1', (function(data) {
+				console.log(data)
+				$('#test').html(data[0])
+			}))-->
+		</script>
+	</body>
+</html>
