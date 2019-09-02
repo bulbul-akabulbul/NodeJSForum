@@ -129,7 +129,11 @@ http
       post(req, res, url_parts);
     } else if (url_parts.pathname === "/reset") {
       reset(req, res, url_parts);
-    } else if (url_parts.pathname === "/messages" && req.method === "GET") {
+    } else if (
+      false &&
+      url_parts.pathname === "/messages" &&
+      req.method === "GET"
+    ) {
       messages(req, res, url_parts);
     } else {
       console.log(url_parts.pathname);
